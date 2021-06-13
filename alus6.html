@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button @click="contador++" id="incrementa">Mais</button>
+        <button @click="contador--" id="incrementa">Menos</button>
+        <p>{{contador}}</p>
+    </div>
+</body>
+<script>
+    var app = new vue({
+        el: "#app",
+        data: {
+            contador:0,
+        },
+        methods: {
+
+        },
+        
+        watch:{
+            contador:function(valor){
+                var dados=this;
+                setTimeout(function(){
+                    alert("O jogo ja acabou");
+                    dados.contador=0;
+
+                },2000)
+            }
+        },
+        computed:{
+
+        }
+    
+    });
+</script>
+</html>
